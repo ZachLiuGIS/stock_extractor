@@ -17,7 +17,7 @@ setup(name='stock_extractor',
       packages=['stock_extractor'],
       keywords='stock, finance, market',
       classifiers=[
-          'License :: MIT License',
+          'Licence :: MIT Licence',
           'Programming Language :: Python :: 3.4',
           'Topic :: Stock :: Finance :: Market'
       ],
