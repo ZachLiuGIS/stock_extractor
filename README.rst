@@ -56,8 +56,10 @@ SP500Extractor
 
 TEST
 =====
-run ::
-	python -m unittest discover
+
+run this code
+
+``$ python -m unittest discover``
 
 
 CONTACT
