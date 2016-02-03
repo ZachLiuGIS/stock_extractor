@@ -4,7 +4,7 @@ import datetime
 import time
 from bs4 import BeautifulSoup
 from stock_extractor.utils.pandas_utils.dataframe_utils import percentage_string_to_number
-from stock_extractor.BaseExtractor import BaseExtractor
+from stock_extractor.BaseExtractor.BaseExtractor import BaseExtractor
 
 
 class SP500Extractor(BaseExtractor):
