@@ -17,9 +17,9 @@ setup(name='stock_extractor',
       packages=['stock_extractor'],
       keywords='stock, finance, market',
       classifiers=[
-          'Licence :: MIT Licence',
+          'License :: OSI Approved :: MIT License',
           'Programming Language :: Python :: 3.4',
-          'Topic :: Stock :: Finance :: Market'
+          'Topic :: Office/Business :: Financial'
       ],
       install_requires=[
           'requests',
