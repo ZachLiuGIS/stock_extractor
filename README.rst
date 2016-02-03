@@ -28,7 +28,8 @@ It is used to extract stock data about S&P 500 companies
 SP500Extractor
 -----
 
-::
+.. code-block:: python
+
 	# import extractor class
 	from stock_extractor.BarchartExtractor.sp_500_extract import SP500Extractor
 
