@@ -7,7 +7,7 @@ def readme():
 
 
 setup(name='stock_extractor',
-      version='0.1',
+      version='0.2',
       description='a general purpose stock data extractor',
       long_description=readme(),
       url='https://github.com/ZachLiuGIS/stock_extractor',
@@ -25,7 +25,7 @@ setup(name='stock_extractor',
           'requests',
           'pandas',
           'beautifulsoup4',
-          'dateutil',
+          'dateutils',
       ],
       include_package_data=True,
       zip_safe=False)
