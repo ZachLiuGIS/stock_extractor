@@ -25,6 +25,7 @@ setup(name='stock_extractor',
           'requests',
           'pandas',
           'beautifulsoup4',
+          'dateutil',
       ],
       include_package_data=True,
       zip_safe=False)

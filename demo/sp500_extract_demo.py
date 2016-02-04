@@ -1,4 +1,4 @@
-from stock_extractor.BarchartExtractor.sp_500_extract import SP500Extractor
+from stock_extractor import SP500Extractor
 
 
 def run_demo(choice):
