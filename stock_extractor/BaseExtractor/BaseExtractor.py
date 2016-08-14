@@ -56,6 +56,9 @@ class YahooFinanceBaseExtractor(BaseExtractor):
     def set_symbol_list(self, symbol_list):
         self.symbol_list = symbol_list
 
+    def set_symbol(self, symbol):
+        self.set_symbol_list([symbol])
+
     def read_symbol_list_from_txt(self, filepath):
         with open(filepath) as f:
             symbols = [symbol.strip() for symbol in f]

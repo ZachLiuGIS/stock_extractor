@@ -35,6 +35,17 @@ class YahooFinanceInfoExtractor(YahooFinanceBaseExtractor):
         resp.raise_for_status()
         self.df = pd.read_csv(StringIO(resp.content.decode('utf-8')), header=None, names=self.field_list)
 
+    def get_stock_info(self, symbol):
+        self.set_field_list([
+            'Symbol', 'LastTradePrice', 'LastTradeDate', 'LastTradeTime', 'D-High', 'D-Low', '52W-High', '52W-Low',
+            '50MA', '200MA', 'PctChangeFrom50MA', 'PctChangeFrom200MA', 'EBITDA', 'MarketCap',
+            'Dividend', 'Yield', 'EPS', 'P/E', 'PEG', 'Price/Sales', 'Price/Book', 'Name'
+        ])
+        self.set_symbol(symbol)
+        self.load_yahoo_data()
+        df = self.get_dataframe()
+        return {x: y[0] for (x, y) in df.to_dict().items()}
+
 
 class YahooFinanceHistoryQuoteExtractor(YahooFinanceHistoryBaseExtractor):
 
