@@ -79,7 +79,7 @@ class YahooFinanceHistoryBaseExtractor(YahooFinanceBaseExtractor):
         super().__init__()
         self.stock_hist_url = r'http://ichart.yahoo.com/table.csv'
         self.end_date = date.today()
-        self.start_date = self.end_date + relativedelta(months=-1)
+        self.start_date = self.end_date + relativedelta(years=-10)
 
     def set_start_date(self, date_str):
         """Set the start date
