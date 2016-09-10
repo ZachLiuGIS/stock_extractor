@@ -4,7 +4,7 @@ from stock_extractor import (
 
 
 if __name__ == '__main__':
-    choice = 1
+    choice = 3
     if choice == 1:
         extractor = YahooFinanceInfoExtractor()
         extractor.read_symbol_list_from_txt('../sample_data/sample_symbol_list.txt')
@@ -30,10 +30,8 @@ if __name__ == '__main__':
         extractor = YahooFinanceHistoryQuoteExtractor()
         extractor.set_end_date('2016-01-27')
         extractor.set_start_date('2016-01-01')
-        extractor.set_symbol_list(['CAT'])
-        extractor.load_data_by_symbol_list()
-        extractor.get_dataframe()
-        extractor.save_to_csv()
+        df = extractor.load_data_by_symbol('CAT')
+        print(df)
 
     if choice == 4:
         extractor = YahooFinanceDivExtractor()

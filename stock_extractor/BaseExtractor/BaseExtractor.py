@@ -132,5 +132,8 @@ class YahooFinanceHistoryBaseExtractor(YahooFinanceBaseExtractor):
         df_list = []
         for symbol in self.symbol_list:
             df = self.load_data_by_symbol(symbol)
+            # rename columns to avoid name conflicts when concat
+            df.columns = [column + '_' + symbol if column != 'Date' else 'Date' for column in df.columns]
+            df.rename(columns={'Adj Close_' + symbol: symbol}, inplace=True)
             df_list.append(df)
         self.df = pd.concat(df_list, axis=1)

@@ -63,11 +63,8 @@ class YahooFinanceHistoryQuoteExtractor(YahooFinanceHistoryBaseExtractor):
         qs = self.get_query_string(symbol)
         resp = self.get_url_response(self.stock_hist_url, qs)
         df = pd.read_csv(StringIO(resp.content.decode('utf-8')), parse_dates=['Date'])
-
-        # rename columns to avoid name conflicts when concat
-        df.columns = [column + '_' + symbol if column != 'Date' else 'Date' for column in df.columns]
-        df.rename(columns={'Adj Close_' + symbol: symbol}, inplace=True)
         df.set_index('Date', inplace=True)
+
         return df
 
     def get_adj_price_only_dataframe(self):
